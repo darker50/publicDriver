@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import test.com.baseDriver;
 public class testClass2 {
-	
+	baseDriver baseDriverinit = new baseDriver();
 	public AndroidDriver driver;
 	@BeforeTest
 	public void getDriver(){
@@ -15,6 +15,7 @@ public class testClass2 {
 	@Test
 	public void testTwo(){
 		System.out.print("class2222");
+		baseDriverinit.waitToDisplayed("com.onebirds.xiaomi_t:id/welcome_viewpager", driver);
 		driver.resetApp();
 		System.out.print("class22222");
 }

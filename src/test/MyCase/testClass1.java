@@ -6,16 +6,18 @@ import org.testng.annotations.Test;
 
 import test.com.baseDriver;
 public class testClass1 {
+	AndroidDriver driver = new baseDriver().getDriver();
+	baseDriver baseDriverinit = new baseDriver();
 	
-	AndroidDriver driver;
 	@BeforeTest
 	public void testGetOrder(){
-		this.driver = baseDriver.getDriver();
+		AndroidDriver driver = baseDriver.getDriver();
 	} 
 	@Test
 	public void testOne(){
 		System.out.print("class111");
-		this.driver.resetApp();
+		baseDriverinit.waitToDisplayed("fdafdafda", driver);
 		System.out.print("class111111");
+		
 }
 }

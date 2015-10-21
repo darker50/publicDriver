@@ -5,7 +5,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import io.appium.java_client.android.AndroidDriver;
@@ -37,7 +41,31 @@ public class baseDriver {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		return driver;
 	}
+	
+	//智能等待的方法
+	public boolean waitToDisplayed(String id, int outTime, AndroidDriver driver){
+		boolean waitDisplayed = false;
+		final By input_loc = By.id(id);
+		waitDisplayed = new WebDriverWait(driver, outTime).until(new ExpectedCondition<Boolean>() {
+			public Boolean apply(WebDriver d) {
+				return d.findElement(input_loc).isDisplayed();
+			}
+		});
+		return waitDisplayed;
+	}
+	
+	//智能等待的方法，默认10秒中
+		public boolean waitToDisplayed(String id, AndroidDriver driver){
+			boolean waitDisplayed = false;
+			final By input_loc = By.id(id);
+			waitDisplayed = new WebDriverWait(driver, 10).until(new ExpectedCondition<Boolean>() {
+				public Boolean apply(WebDriver d) {
+					return d.findElement(input_loc).isDisplayed();
+				}
+			});
+			return waitDisplayed;
+		}
 }
