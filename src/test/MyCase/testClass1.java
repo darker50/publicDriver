@@ -6,12 +6,12 @@ import org.testng.annotations.Test;
 
 import test.com.baseDriver;
 public class testClass1 {
-	AndroidDriver driver = new baseDriver().getDriver();
+	public AndroidDriver driver;
 	baseDriver baseDriverinit = new baseDriver();
 	
 	@BeforeTest
 	public void testGetOrder(){
-		AndroidDriver driver = baseDriver.getDriver();
+		driver = baseDriver.getDriver();
 	} 
 	@Test
 	public void testOne(){

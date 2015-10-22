@@ -36,7 +36,7 @@ public class baseDriver {
         
 		try {
 			URL url = new URL("http://127.0.0.1:4723/wd/hub");
-			driver =Driver.getSharedInstance(url, capabilities);
+			driver =Driver.getInstance(url, capabilities);
 		} catch (MalformedURLException  e) {
 			// TODO: handle exception
 			e.printStackTrace();
