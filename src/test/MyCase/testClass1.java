@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import test.com.baseDriver;
 public class testClass1 {
-	public AndroidDriver driver;
+	static  AndroidDriver driver;
 	baseDriver baseDriverinit = new baseDriver();
 	
 	@BeforeTest
