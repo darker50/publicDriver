@@ -7,7 +7,8 @@ public class Stacks {
 	};
 	public static void main(String[] args){
 		Stack stk  = new Stack();
-		for (int i = 0; i < months.length; i++) {
+		for (int i = 0; i < months.length; i++) 
+//			System.out.println(months[i]);
 			stk.push(months[i] + "");
 		System.out.println("stk = " + stk);
 		
@@ -17,7 +18,7 @@ public class Stacks {
 		while (!stk.empty()) {
 			System.out.println(stk.pop());
 			
-		}
+		
 		}
 	}
 }
